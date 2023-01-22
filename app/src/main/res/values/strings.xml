@@ -2,4 +2,9 @@
     <string name="app_name">SuYeoun\'s Android Labs</string>
     <string name="hello_message">Hello world! </string>
     <string name="button_message">I\'m a button</string>
+    <string name="editmessage">I\'m an EditText</string>
+    <string name="hinttext">Write something here</string>
+    <string name="switchMessage">Do you drink coffee\?</string>
+    <string name="checkBoxMessage">Do you drink coffee\?</string>
+    <string name="radioButtonMessage">Do you drink coffee\?</string>
 </resources>
