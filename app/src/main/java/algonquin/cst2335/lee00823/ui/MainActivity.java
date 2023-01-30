@@ -5,8 +5,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import algonquin.cst2335.lee00823.R;
@@ -24,59 +26,54 @@ public class MainActivity extends AppCompatActivity {
         model = new ViewModelProvider(this).get(MainViewModel.class);
 
         variableBinding = ActivityMainBinding.inflate(getLayoutInflater()); //produceslayouts
-
         setContentView(variableBinding.getRoot());
 
-       // variableBinding.myEditText.setText(model.editString);
         variableBinding.myButton.setOnClickListener(click -> {
             model.editString.postValue(variableBinding.myEditText.getText().toString());
-           // model.editString = variableBinding.myEditText.getText().toString();
-            variableBinding.myEditText.setText("Your edit text has: " + model.editString);
-            model.editString.observe(this, s -> {
-            variableBinding.myEditText.setText("Your edit text has " + s);
-
-                Button myButton  = findViewById(R.id.myButton);
-               int width = myButton.getWidth();
-               int height = myButton.getHeight();
-                String toast_message = "The width = " + width + " and height = " + height;
-                Toast.makeText(this, toast_message, Toast.LENGTH_SHORT).show();
-            });
         });
 
-        //variableBinding.mySwitch.setChecked(true);
+        model.editString.observe(this, s -> {
+            variableBinding.textview.setText("Your edit text has " + s);
+        });
 
-        //setOnCheckedChangeListener((btn, isChecked)-> {});
         model.isSelected.observe(this, selected -> {
             variableBinding.checkBox.setChecked(selected);
             variableBinding.radioButton.setChecked(selected);
             variableBinding.switch1.setChecked(selected);
+            Context context = getApplicationContext();
+            CharSequence text = "The value is now: " + selected;
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        });
+
+        variableBinding.checkBox.setOnCheckedChangeListener((checkBox, isChecked) ->
+        {
+            model.isSelected.postValue(isChecked);
+        });
+
+        variableBinding.radioButton.setOnCheckedChangeListener((radioButton, isChecked) ->
+        {
+            model.isSelected.postValue(isChecked);
+        });
+
+        variableBinding.switch1.setOnCheckedChangeListener((switch1, isChecked) ->
+        {
+            model.isSelected.postValue(isChecked);
+        });
+
+        variableBinding.imageButton.setOnClickListener(click ->
+        {
+            int width = variableBinding.imageButton.getWidth();
+            int height = variableBinding.imageButton.getHeight();
+            Context context = getApplicationContext();
+            CharSequence text = "The width = " + width + " and height = " + height;
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
         });
 
 
 
-//        Button btn  = findViewById(R.id.myButton);
-//         String editString = myedit.getText().toString();
-//          mytext.setText( "Your edit text has: " + editString);
-
-        //myButton.setOnClickListener(    (View v) -> {  mytext.setText("Your edit text has: " + editString);  }   );
-        // if(mybutton != null) mybutton.setOnClickListener( )
-//        variableBinding.myButton.setOnClickListener(v -> {
-//            model.editString = "You clicked the button";
-//            variableBinding.myButton.setText(model.editString);
-//        });
-
-
     }
-
-
-    /*
-    class MyListner implements View.OnClickListener {
-
-        @Override
-        public void onClick(View view) {
-
-        }
-    }
-    */
-
 }
