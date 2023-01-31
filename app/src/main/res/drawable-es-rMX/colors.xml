@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <color name="my_primary">#43aa8b</color>
     <color name="my_secondary">#90be6d</color>
     <color name="my_statusbar">#577590</color>
+=======
+    <color name="my_primary">#194567</color>
+    <color name="my_secondary">#705B1F</color>
+    <color name="my_statusbar">#2D4215</color>
+>>>>>>> 6382f51 (Finished Phone Version of Lab3)
 =======
     <color name="my_primary">#194567</color>
     <color name="my_secondary">#705B1F</color>
