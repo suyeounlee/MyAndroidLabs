@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_marginTop="27dp"
+    android:layout_marginBottom="27dp"
+    android:layout_marginLeft="48dp"
+    android:layout_marginRight="48dp" >
 
     <Button
         android:id="@+id/button"
@@ -18,7 +22,11 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:nextFocusDown="@id/spin_switch"
+        android:nextFocusRight="@id/button2"
+        android:nextFocusLeft="@id/button3"
+        />
 
     <Button
         android:id="@+id/button2"
@@ -30,7 +38,10 @@
         app:layout_constraintEnd_toStartOf="@+id/button3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        app:layout_constraintTop_toTopOf="@+id/button"
+        android:nextFocusDown="@id/spin_switch"
+        android:nextFocusRight="@id/button3"
+        android:nextFocusLeft="@id/button"/>
 
     <Button
         android:id="@+id/button3"
@@ -43,7 +54,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        app:layout_constraintTop_toTopOf="@+id/button2"
+        android:nextFocusDown="@id/spin_switch"
+        android:nextFocusRight="@id/button"
+        android:nextFocusLeft="@id/button2" />
 
     <ImageView
         android:id="@+id/flagview"
@@ -52,7 +66,8 @@
         android:layout_marginTop="32dp"
         android:src="@drawable/flag"
         app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:srcCompat="@drawable/flag"/>
 
     <Switch
         android:id="@+id/spin_switch"
@@ -64,5 +79,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/flagview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/flagview"
-        app:layout_constraintVertical_bias="0.465" />
+        app:layout_constraintVertical_bias="0.465"
+        android:nextFocusUp="@id/button3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
