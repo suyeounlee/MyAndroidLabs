@@ -1,39 +1,77 @@
-package algonquin.cst2335.lee00823;
+package alqonquin.cst2335.vill0413;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
-import android.widget.ImageView;
-import android.widget.Switch;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView imgView;
-    Switch sw;
+    private static String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imgView = findViewById(R.id.flagview);
-        sw = findViewById(R.id.spin_switch);
+        Log.w(TAG, "In onCreate() - Loading Widgets" );
 
-        sw.setOnCheckedChangeListener( (btn, isChecked) -> {
-            if (isChecked)
-            {
-                RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                rotate.setDuration(5000);
-                rotate.setRepeatCount(Animation.INFINITE);
-                rotate.setInterpolator(new LinearInterpolator());
+        Button loginButton = (Button) findViewById(R.id.login);
+        EditText emailEditText = (EditText) findViewById(R.id.emailText);
 
-                imgView.startAnimation(rotate);
+        SharedPreferences prefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        String emailAddress = prefs.getString("LoginName", "");
+        emailEditText.setText(emailAddress);
 
-            }else {
-                imgView.clearAnimation();
-            }
+        loginButton.setOnClickListener(clk -> {
+
+            editor.putString("LoginName", emailEditText.getText().toString());
+            editor.apply();
+
+            Intent nextPage = new Intent( MainActivity.this, SecondActivity.class);
+            nextPage.putExtra( "EmailAddress", emailEditText.getText().toString() );
+            startActivity(nextPage);
         });
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.w(TAG, "In onStart() - Application visible on screen" );
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.w(TAG, "In onResume() - Responding to user input" );
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.w(TAG, "In onPause() - Not responding to user input" );
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.w(TAG, "In onStop() - Application not visible" );
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.w(TAG, "In onDestroy() - Memory is freed" );
+
+    }
+
 }
