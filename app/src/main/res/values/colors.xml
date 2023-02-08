@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="my_primary">#194567</color>
-    <color name="my_secondary">#705B1F</color>
-    <color name="my_statusbar">#2D4215</color>
+    <color name="my_primary">#4CAF50</color>
+    <color name="my_secondary">#045A65</color>
+    <color name="my_statusbar">#025A52</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="my_text">#ED0A0A</color>
+    <color name="my_text">#01131C</color>
+    <color name="button_text">#EEEBF4</color>
+    <color name="secondActivityButton">#036C62</color>
+
 </resources>
