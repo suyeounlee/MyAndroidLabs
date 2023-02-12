@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This function is to check special character contains
      * @param c The char object that we are checking
-     * @return true if c is one of: #$%^&*!@?
+     * @return true if c is one of: #$%^*!@?
      */
     boolean isSpecialCharacter(char c) {
         switch(c) {
