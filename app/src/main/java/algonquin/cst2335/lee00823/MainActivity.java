@@ -67,20 +67,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (!foundUpperCase) {
-            tv.setText("You shall not pass!.");
+            tv.setText("You shall not pass!");
             Toast.makeText(getApplicationContext(), "Upper case letter is missing", Toast.LENGTH_SHORT).show();// Say that they are missing an upper case letter;
             return false;
         } else if (!foundLowerCase) {
-            tv.setText("You shall not pass!.");
+            tv.setText("You shall not pass!");
             Toast.makeText(getApplicationContext(), "Lower case letter is missing", Toast.LENGTH_SHORT).show(); // Say that they are missing a lower case letter;
             return false;
         } else if (!foundNumber) {
-            tv.setText("You shall not pass!.");
+            tv.setText("You shall not pass!");
             Toast.makeText(getApplicationContext(), "Number is missing", Toast.LENGTH_SHORT).show(); // Say that they are missing a number;
             return false;
         } else if (!foundSpecial) {
             Toast.makeText(getApplication(), "Special character is missing", Toast.LENGTH_SHORT).show(); // Say that they are missing a character;
-            tv.setText("You shall not pass!.");
+            tv.setText("You shall not pass!");
             return false;
         } else
             tv.setText("Your password meets the requirements.");
