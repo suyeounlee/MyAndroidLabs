@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SuYeoun\'s Android Labs</string>
-    <string name="hello_message">Hola todo el mundo!</string>
-    <string name="button_message">Yo soy el boton</string>
-    <string name="spin_message" translatable="false">"Gira "</string>
-    <string name="button1">Boton 1</string>
-    <string name="button2">Boton 2</string>
-    <string name="button3">Boton 3</string>
+    <string name="hello_message">Ingresa tu contrasena</string>
+    <string name="button_message">Login</string>
 </resources>
