@@ -34,6 +34,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MessageDetailsFragment"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MessageDetailsFragment" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

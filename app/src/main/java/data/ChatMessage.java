@@ -13,7 +13,6 @@ public class ChatMessage{
     @ColumnInfo(name="id")
     public int id;
 
-
     @ColumnInfo(name="message")
     private String message;
 
