@@ -8,6 +8,9 @@ android {
         viewBinding true
     }
 
+    viewBinding {
+        enabled = true
+    }
 
     namespace 'algonquin.cst2335.lee00823'
     compileSdk 33
