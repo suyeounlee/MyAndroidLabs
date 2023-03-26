@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SuYeoun\'s Android Labs</string>
-    <string name="hello_message">Ingresa tu contrasena</string>
+    <string name="hello_message">Ingresa el nombre de la ciudad:</string>
     <string name="button_message">Login</string>
 </resources>
